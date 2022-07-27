@@ -14,8 +14,10 @@ app.use(cors());
 
 const routes = require('./routes/general');
 app.use(bodyParser.json());    
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
+
+app.use((req, res) => {res.sendFile(path.join(__dirname,`public/${req.url}`)) });
 
 Message.belongsTo(User, { constraints: true, onDelete: 'CASCADE' });
 User.hasMany(Message)
