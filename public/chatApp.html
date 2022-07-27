@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *; style-src 'self' http://* https://* 'unsafe-inline'; script-src 'self' http://* https://* 'unsafe-inline' 'unsafe-eval'">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="heading">Chat App</h1>
+    </header>
+    
+    <div id="myGroup">
+        <h3 class="groupheader">My Groups</h3>
+        <button class="groupheader" onclick="createGroup()">New Group</button>
+        <div id="myGroupitems">
+
+        </div>
+    </div>
+
+    <button id="btn">☰</button>
+
+    <nav id="nav">
+    <ul>
+    <li><a href="#" onclick="addUser()">Add User</a></li>
+    <li><a href="#" onclick="makeUserAsAdmin()">Make Admin</a></li>
+    <li><a href="#" onclick="removeUser()">Remove User</a></li>
+    </ul>
+    </nav>
+
+    <div id="myChat">
+        <div id="gtitle"></div>
+        <div id="messages">
+
+        </div>
+    </div>
+
+    <form id="chat-form">
+        <div class="msg"></div>
+        <input type="text" name="message" id="message" placeholder="Enter a message" minlength="1" maxlength="333" required>
+        <button type="submit">Send</button>  
+    </form>  
+          
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+    <script src="chatApp.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+#heading{text-align: center;}
+#myChat
+{
+    margin-left: 39%;
+    position: absolute;
+    top: 25%;
+    z-index: 1000;
+}
+
+#myGroup{
+    margin-left: 12%;
+}
+
+.groupheader
+{
+    display: inline-block;
+    padding: 0.2rem;   
+}
+
+
+#addUser
+{
+    margin-left: 70%;
+    position: absolute;
+    top: 15%;
+    z-index: 1000;
+}
+#makeUserAsAdmin
+{
+    margin-left: 70%;
+    position: absolute;
+    top: 20%;
+    z-index: 1000;
+}
+#removeUser
+{
+    margin-left: 70%;
+    position: absolute;
+    top: 25%;
+    z-index: 1000;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+
+#menu 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#btn 
+{
+    background-color: rebeccapurple;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#btn.active 
+{
+    transform: translateX(-100px);
+}
+
+nav 
+{
+    background-color: rebeccapurple;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav.active 
+{
+    transform: translateX(0);
+}
+
+nav ul 
+{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li 
+{
+    padding: 1rem 0;
+}
+
+nav a 
+{
+    color: white;
+    text-decoration: none;
+}
+
+nav button
+{
+    color: white;
+    text-decoration: none;
+    top: 10px;
+}
+
+body {
+    background-image: url(./bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body h1{
+    text-align: center;
+    color: rgb(218, 134, 200);
+}
+
+header {
+    background-color: #4b073a;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #54656f;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+#chat-form
+{
+    bottom: 2px;  
+    margin-left: 60%;
+    text-align: center;
+    bottom: 2rem;
+    left: -382.5px;
+    margin: 0px auto 0px 55%;
+    position: fixed;
+    width: 690px;
+    
+}
+
+#chat-form button
+{
+height: 2.5rem;
+cursor: pointer;
+border: 1px solid #3a0101;
+}
+
+#chat-form input[type="text"]
+{
+    border-radius: 4px;
+    width: 60%;
+    padding: 12px 20px;
+    border: 1px solid rgb(100, 3, 3);
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color:#61064a;
+    color: aliceblue;
+}
+
+
