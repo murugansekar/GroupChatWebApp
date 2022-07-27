@@ -21,7 +21,7 @@ function onSend(e)
     //alert("varu")
     token = localStorage.getItem('token')
     gid = localStorage.getItem('currentGroup')
-    axios.post(`http://localhost:3000/postGroupMessage/${gid}`,{message:msg.value}, { headers:{"Authorization":token}})
+    axios.post(`http://52.53.233.3:3000/postGroupMessage/${gid}`,{message:msg.value}, { headers:{"Authorization":token}})
     .then((res) => {msg.value='';})
     .catch(err => {console.log(err)})    
 }
@@ -49,7 +49,7 @@ function StoreinLocalStorage()
 {
     const lastMsgId = localStorage.getItem('lastMsgId')
     currentGroup = localStorage.getItem('currentGroup')
-    axios.get(`http://localhost:3000/getGroupMessages/${currentGroup}/${lastMsgId}`)
+    axios.get(`http://52.53.233.3:3000/getGroupMessages/${currentGroup}/${lastMsgId}`)
     .then((res)=>{
         if(lastMsgId!==JSON.stringify(res.data.lastMessageId))
         {
@@ -68,7 +68,7 @@ function StoreinLocalStorage()
 
 function myGroups()
 {
-axios.get("http://localhost:3000/getGroupsOfaUser", {headers:{"Authorization":token}})
+axios.get("http://52.53.233.3:3000/getGroupsOfaUser", {headers:{"Authorization":token}})
 .then((res)=> { myGroupitems.innerHTML=''
     res.data.forEach(Element => {
     let groupBox = document.createElement("div")
@@ -80,7 +80,7 @@ axios.get("http://localhost:3000/getGroupsOfaUser", {headers:{"Authorization":to
 async function createGroup()
 {
     let gname = prompt("Please enter Group's Name");
-    const CG = await axios.post("http://localhost:3000/postGroup",{gname: gname}, {headers:{"Authorization":token}})
+    const CG = await axios.post("http://52.53.233.3:3000/postGroup",{gname: gname}, {headers:{"Authorization":token}})
 } 
 
 
@@ -104,7 +104,7 @@ async function addUser()
     if(currentGroup)
     {
     userPNumber=prompt("Enter User's number to add")
-    const AU = await axios.post("http://localhost:3000/addUser",{gid: currentGroup,pNumber:userPNumber})
+    const AU = await axios.post("http://52.53.233.3:3000/addUser",{gid: currentGroup,pNumber:userPNumber})
     }    
 }
 
@@ -113,7 +113,7 @@ async function makeUserAsAdmin()
 {
     currentGroup = localStorage.getItem('currentGroup')
     const NApNumber = prompt("Enter New Admin's Number")
-    const UA = await axios.post("http://localhost:3000/MakeAsAdmin",{gid: currentGroup,NApNumber:NApNumber}, { headers:{"Authorization":token}})
+    const UA = await axios.post("http://52.53.233.3:3000/MakeAsAdmin",{gid: currentGroup,NApNumber:NApNumber}, { headers:{"Authorization":token}})
 }
 
 
@@ -121,5 +121,5 @@ async function removeUser()
 {
     currentGroup = localStorage.getItem('currentGroup')
     const RUpNumber = prompt("Enter User's Number to be Removed")
-    const RU = await axios.post("http://localhost:3000/removeUser",{gid: currentGroup,RUpNumber:RUpNumber}, { headers:{"Authorization":token}})
+    const RU = await axios.post("http://52.53.233.3:3000/removeUser",{gid: currentGroup,RUpNumber:RUpNumber}, { headers:{"Authorization":token}})
 }

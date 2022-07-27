@@ -17,7 +17,7 @@ function onSubmit(e)
   } 
   else 
   {
-    axios.post("http://localhost:3000/signup",{ name:nam,email:email,pNumber:pNumber,password:password}).then(result =>{
+    axios.post("http://52.53.233.3:3000/signup",{ name:nam,email:email,pNumber:pNumber,password:password}).then(result =>{
       if(result.data.success)
       {
         alert("Successfuly signed up")
